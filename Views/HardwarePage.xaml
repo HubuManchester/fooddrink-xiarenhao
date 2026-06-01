@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BiteRecord.Views.HardwarePage"
+             Title="Hardware Demo">
+
+    <ScrollView>
+        <StackLayout Padding="16" Spacing="16">
+
+            <Label Text="Mobile Hardware Features"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,8"/>
+
+            <Frame BorderColor="#FF6B35" CornerRadius="12" Padding="12">
+                <StackLayout>
+                    <Label Text="📷 Camera" FontAttributes="Bold" FontSize="16"/>
+                    <Button x:Name="CameraButton" Text="Take Photo" Clicked="OnCameraClicked"/>
+                    <Image x:Name="CameraPreview" HeightRequest="120" Aspect="AspectFill" Margin="0,4"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="#FF6B35" CornerRadius="12" Padding="12">
+                <StackLayout>
+                    <Label Text="📍 Location &amp; Geocoding" FontAttributes="Bold" FontSize="16"/>
+                    <Button x:Name="LocationButton" Text="Get My Location" Clicked="OnLocationClicked"/>
+                    <Label x:Name="LocationDisplay" Text="Not fetched yet" FontSize="12" TextColor="Gray" Margin="0,4"/>
+                    <Label x:Name="AddressDisplay" Text="" FontSize="12" TextColor="#00B894" Margin="0,2"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="#FF6B35" CornerRadius="12" Padding="12">
+                <StackLayout>
+                    <Label Text="🔊 Text to Speech" FontAttributes="Bold" FontSize="16"/>
+                    <Entry x:Name="SpeechEntry" Placeholder="Enter text to speak..." Text="This is a hardware demo for text to speech."/>
+                    <Grid ColumnDefinitions="*, *" ColumnSpacing="8">
+                        <Button x:Name="SpeakButton" Text="Speak" Clicked="OnSpeakClicked"/>
+                        <Button x:Name="StopButton" Text="Stop" Clicked="OnStopClicked"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="#FF6B35" CornerRadius="12" Padding="12">
+                <StackLayout>
+                    <Label Text="📳 Vibration &amp; Haptic Feedback" FontAttributes="Bold" FontSize="16"/>
+                    <Grid ColumnDefinitions="*, *" ColumnSpacing="8">
+                        <Button x:Name="VibrateButton" Text="Vibrate" Clicked="OnVibrateClicked"/>
+                        <Button x:Name="HapticButton" Text="Haptic Click" Clicked="OnHapticClicked"/>
+                    </Grid>
+                    <Label x:Name="HapticCountLabel" Text="Haptic test count: 0" FontSize="12" TextColor="Gray" Margin="0,4"/>
+                </StackLayout>
+            </Frame>
+
+            <Label Text="All hardware features are fully functional on real devices and emulators where supported." 
+                   FontSize="12" 
+                   TextColor="Gray" 
+                   HorizontalOptions="Center"
+                   Margin="0,16"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

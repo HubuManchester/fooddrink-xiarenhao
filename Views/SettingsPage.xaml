@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BiteRecord.Views.SettingsPage"
+             Title="Settings">
+
+    <ScrollView>
+        <StackLayout Padding="16" Spacing="20">
+
+            <Label Text="Accessibility Settings"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,0,0,8"/>
+
+            <Frame BorderColor="#E8E8E8" CornerRadius="12" Padding="12">
+                <StackLayout>
+                    <Label Text="🎨 Theme" FontAttributes="Bold" FontSize="16"/>
+                    <Label Text="Select your preferred theme" FontSize="12" TextColor="Gray"/>
+                    <Picker x:Name="ThemePicker" Title="Select Theme" SelectedIndexChanged="OnThemeChanged">
+                        <Picker.Items>
+                            <x:String>Light</x:String>
+                            <x:String>Dark</x:String>
+                            <x:String>System Default</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="#E8E8E8" CornerRadius="12" Padding="12">
+                <StackLayout>
+                    <Label Text="🔤 Large Text Mode" FontAttributes="Bold" FontSize="16"/>
+                    <Label Text="Increase font size for better readability" FontSize="12" TextColor="Gray"/>
+                    <Switch x:Name="LargeTextSwitch" Toggled="OnLargeTextToggled"/>
+                </StackLayout>
+            </Frame>
+
+            <Frame BorderColor="#E8E8E8" CornerRadius="12" Padding="12">
+                <StackLayout>
+                    <Label Text="ℹ️ About" FontAttributes="Bold" FontSize="16"/>
+                    <Label Text="BiteRecord - Food &amp; Drink Memory Logger" FontSize="14"/>
+                    <Label Text="Record your favorite restaurants and dishes" FontSize="12" TextColor="Gray"/>
+                    <Label Text="Version 1.0" FontSize="12" TextColor="Gray" Margin="0,8,0,0"/>
+                </StackLayout>
+            </Frame>
+
+            <Label Text="Changes apply immediately to current page" 
+                   FontSize="10" 
+                   TextColor="Gray" 
+                   HorizontalOptions="Center"
+                   Margin="0,16"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

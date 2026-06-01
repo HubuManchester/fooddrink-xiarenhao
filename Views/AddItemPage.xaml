@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BiteRecord.Views.AddItemPage"
+             Title="Add Record">
+
+    <ScrollView>
+        <StackLayout Padding="16" Spacing="12">
+
+            <!-- Restaurant Name -->
+            <Label Text="Restaurant Name *" FontAttributes="Bold"/>
+            <Entry x:Name="RestaurantEntry" Placeholder="e.g., Burger King" MaxLength="100"/>
+
+            <!-- Dish Name -->
+            <Label Text="Dish Name *" FontAttributes="Bold"/>
+            <Entry x:Name="DishEntry" Placeholder="e.g., Whopper" MaxLength="100"/>
+
+            <!-- Rating (Stars) -->
+            <Label Text="Rating *" FontAttributes="Bold"/>
+            <Picker x:Name="RatingPicker" Title="Select Rating">
+                <Picker.Items>
+                    <x:String>1 Star</x:String>
+                    <x:String>2 Stars</x:String>
+                    <x:String>3 Stars</x:String>
+                    <x:String>4 Stars</x:String>
+                    <x:String>5 Stars</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- Price Per Person -->
+            <Label Text="Price Per Person (¥)" FontAttributes="Bold"/>
+            <Entry x:Name="PriceEntry" 
+                   Placeholder="e.g., 50"
+                   Keyboard="Numeric"/>
+
+            <!-- Review Text -->
+            <Label Text="Your Review" FontAttributes="Bold"/>
+            <Editor x:Name="ReviewEditor" 
+                    Placeholder="Share your dining experience..."
+                    HeightRequest="100"
+                    MaxLength="500"/>
+
+            <!-- Photo Section -->
+            <Label Text="Photo" FontAttributes="Bold"/>
+            <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto">
+                <Button x:Name="TakePhotoButton"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Text="Take Photo"
+                        HorizontalOptions="Fill"
+                        Clicked="OnTakePhotoClicked"/>
+
+                <Button x:Name="PickPhotoButton"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="Pick from Gallery"
+                        HorizontalOptions="Fill"
+                        Clicked="OnPickPhotoClicked"/>
+
+                <Image x:Name="PhotoPreview"
+                       Grid.Row="1"
+                       Grid.Column="0"
+                       Grid.ColumnSpan="2"
+                       HeightRequest="150"
+                       Margin="0,8"
+                       Aspect="AspectFill"/>
+            </Grid>
+
+            <!-- Location Section -->
+            <Label Text="Location" FontAttributes="Bold"/>
+            <Button x:Name="GetLocationButton"
+                    Text="Get Current Location"
+                    Clicked="OnGetLocationClicked"/>
+            <Label x:Name="LocationLabel" Text="No location yet" FontSize="12" TextColor="Gray"/>
+
+            <!-- Error Panel -->
+            <Frame x:Name="ErrorPanel"
+                   BackgroundColor="#FFE0E0"
+                   IsVisible="False"
+                   CornerRadius="8"
+                   Margin="0,8">
+                <Label x:Name="ErrorMessageLabel"
+                       TextColor="#D32F2F"
+                       FontSize="12"/>
+            </Frame>
+
+            <!-- Save Button -->
+            <Button x:Name="SaveButton"
+                    Text="Save Record"
+                    BackgroundColor="#FF6B35"
+                    TextColor="White"
+                    CornerRadius="8"
+                    HeightRequest="50"
+                    Clicked="OnSaveClicked"/>
+
+            <Label Text="* Required fields" FontSize="10" TextColor="Gray" HorizontalOptions="Center"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
