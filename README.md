@@ -29,22 +29,24 @@ Food and Drink
 *(Optional: Add screenshots of your app here)*
 
 ## Project Structure
+```text
 BiteRecord/
 ├── Models/
-│ └── BiteRecordModel.cs # Data model
+│   └── BiteRecordModel.cs
 ├── Services/
-│ ├── DatabaseService.cs # SQLite operations
-│ ├── AccessibilityService.cs # Large text mode
-│ └── SpeechService.cs # Text-to-speech
+│   ├── DatabaseService.cs
+│   ├── AccessibilityService.cs
+│   └── SpeechService.cs
 ├── Views/
-│ ├── MainPage.xaml # Home page with record list
-│ ├── AddItemPage.xaml # Add new record
-│ ├── DetailPage.xaml # Record details
-│ ├── HardwarePage.xaml # Hardware demo
-│ └── SettingsPage.xaml # Theme and accessibility
+│   ├── MainPage.xaml
+│   ├── AddItemPage.xaml
+│   ├── DetailPage.xaml
+│   ├── HardwarePage.xaml
+│   └── SettingsPage.xaml
 └── Platforms/
-└── Android/
-└── AndroidManifest.xml # Permissions
+    └── Android/
+        └── AndroidManifest.xml
+```
 
 ## How to Run
 1. Open the solution in Visual Studio 2022
